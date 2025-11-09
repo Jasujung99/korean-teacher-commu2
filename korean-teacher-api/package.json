@@ -1,0 +1,30 @@
+{
+  "name": "korean-teacher-api",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers backend for Korean Teacher Community Platform",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "hono",
+    "notion"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^5.3.0",
+    "@tsndr/cloudflare-worker-jwt": "^3.2.0",
+    "hono": "^4.10.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251109.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.46.0"
+  }
+}
