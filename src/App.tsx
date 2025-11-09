@@ -7,10 +7,11 @@ import { ResearchSection } from './components/ResearchSection'
 import { FieldSection } from './components/FieldSection'
 import { GroupsPage } from './components/GroupsPage'
 import { ResourceLibrary } from './components/ResourceLibrary'
+import { UsageGuide } from './components/UsageGuide'
 import { Toaster } from './components/ui/sonner'
 import type { Section, Post, Resource, Group } from './lib/types'
 
-type Page = 'home' | 'groups' | 'resources'
+type Page = 'home' | 'groups' | 'resources' | 'guide'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home')
@@ -31,6 +32,10 @@ function App() {
     
     if (currentPage === 'resources') {
       return <ResourceLibrary resources={resources || []} />
+    }
+
+    if (currentPage === 'guide') {
+      return <UsageGuide />
     }
 
     return (

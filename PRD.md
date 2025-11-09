@@ -99,6 +99,15 @@ A comprehensive community platform for Korean language teachers to collaborate, 
 - Progression: User action → Metric increments → Displays on post card and popular content feeds
 - Success criteria: Popular content appears in right sidebar and drives discoverability
 
+### Usage Guide
+
+**Website Usage Guide**
+- Functionality: Comprehensive guide explaining all platform features including navigation, posting, resource library, groups, and interaction patterns
+- Purpose: Helps new and existing users understand and effectively use all platform capabilities
+- Trigger: Click question mark icon in header navigation
+- Progression: Click guide button → View categorized accordion sections → Expand topics of interest → Read instructions and tips
+- Success criteria: Users can quickly find answers to common questions about using the platform
+
 ## Edge Case Handling
 
 - **Empty States** - Show helpful prompts when sections have no content ("Be the first to share your research!" with CTA buttons)

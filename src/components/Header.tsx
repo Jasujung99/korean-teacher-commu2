@@ -1,4 +1,4 @@
-import { BookOpen, Users, MagnifyingGlass, UserCircle } from '@phosphor-icons/react'
+import { BookOpen, Users, MagnifyingGlass, UserCircle, Question } from '@phosphor-icons/react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Tabs, TabsList, TabsTrigger } from './ui/tabs'
@@ -7,8 +7,8 @@ import type { Section } from '@/lib/types'
 interface HeaderProps {
   activeSection: Section
   onSectionChange: (section: Section) => void
-  onNavigate: (page: 'home' | 'groups' | 'resources', section?: Section) => void
-  currentPage: 'home' | 'groups' | 'resources'
+  onNavigate: (page: 'home' | 'groups' | 'resources' | 'guide', section?: Section) => void
+  currentPage: 'home' | 'groups' | 'resources' | 'guide'
 }
 
 export function Header({ activeSection, onSectionChange, onNavigate, currentPage }: HeaderProps) {
@@ -48,6 +48,15 @@ export function Header({ activeSection, onSectionChange, onNavigate, currentPage
                 className="pl-10"
               />
             </div>
+            
+            <Button 
+              variant={currentPage === 'guide' ? 'default' : 'ghost'}
+              onClick={() => onNavigate('guide')}
+              size="icon"
+              title="이용 안내"
+            >
+              <Question size={20} />
+            </Button>
             
             <Button 
               variant={currentPage === 'resources' ? 'default' : 'outline'}
