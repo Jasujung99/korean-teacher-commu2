@@ -36,11 +36,11 @@ export function RightSidebarDrawer({ open, onOpenChange, posts, groups }: RightS
         
         <div className="space-y-4 mt-4">
           <Card className="p-4">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-1">
               <TrendUp size={18} className="text-accent" />
               <h3 className="font-semibold text-sm">🔥 인기글</h3>
             </div>
-            <Separator className="mb-2" />
+            <Separator className="my-2" />
             <div className="space-y-3">
               {popularPosts.length > 0 ? (
                 popularPosts.map(post => (
@@ -63,11 +63,11 @@ export function RightSidebarDrawer({ open, onOpenChange, posts, groups }: RightS
           </Card>
 
           <Card className="p-4">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-1">
               <ChatCircle size={18} className="text-primary" />
               <h3 className="font-semibold text-sm">💬 최근 활동</h3>
             </div>
-            <Separator className="mb-2" />
+            <Separator className="my-2" />
             <div className="space-y-3">
               {recentActivities.map(activity => (
                 <div key={activity.id} className="flex items-start gap-2">
@@ -91,11 +91,11 @@ export function RightSidebarDrawer({ open, onOpenChange, posts, groups }: RightS
           </Card>
 
           <Card className="p-4">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-1">
               <UsersIcon size={18} className="text-secondary" />
               <h3 className="font-semibold text-sm">👥 활성 모임</h3>
             </div>
-            <Separator className="mb-2" />
+            <Separator className="my-2" />
             <div className="space-y-3">
               {activeGroups.length > 0 ? (
                 activeGroups.map(group => (
