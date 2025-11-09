@@ -3,6 +3,8 @@ import { useKV } from '@github/spark/hooks'
 import { Header } from './components/Header'
 import { LeftSidebar } from './components/LeftSidebar'
 import { RightSidebar } from './components/RightSidebar'
+import { LeftSidebarDrawer } from './components/LeftSidebarDrawer'
+import { RightSidebarDrawer } from './components/RightSidebarDrawer'
 import { ResearchSection } from './components/ResearchSection'
 import { FieldSection } from './components/FieldSection'
 import { GroupsPage } from './components/GroupsPage'
@@ -19,10 +21,14 @@ function App() {
   const [posts] = useKV<Post[]>('posts', [])
   const [resources] = useKV<Resource[]>('resources', [])
   const [groups] = useKV<Group[]>('groups', [])
+  const [leftDrawerOpen, setLeftDrawerOpen] = useState(false)
+  const [rightDrawerOpen, setRightDrawerOpen] = useState(false)
 
   const handleNavigate = (page: Page, section?: Section) => {
     setCurrentPage(page)
     if (section) setActiveSection(section)
+    setLeftDrawerOpen(false)
+    setRightDrawerOpen(false)
   }
 
   const renderMainContent = () => {
@@ -65,11 +71,25 @@ function App() {
         }}
         onNavigate={handleNavigate}
         currentPage={currentPage}
+        onLeftDrawerOpen={() => setLeftDrawerOpen(true)}
+        onRightDrawerOpen={() => setRightDrawerOpen(true)}
       />
       
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 md:px-6 py-6 md:py-8">
         {renderMainContent()}
       </div>
+
+      <LeftSidebarDrawer 
+        open={leftDrawerOpen} 
+        onOpenChange={setLeftDrawerOpen}
+      />
+      
+      <RightSidebarDrawer 
+        open={rightDrawerOpen} 
+        onOpenChange={setRightDrawerOpen}
+        posts={posts || []}
+        groups={groups || []}
+      />
 
       <Toaster />
     </div>

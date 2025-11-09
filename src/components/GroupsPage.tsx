@@ -59,30 +59,31 @@ export function GroupsPage({ groups }: GroupsPageProps) {
 
   return (
     <div className="max-w-5xl mx-auto space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">모임 찾기</h1>
-          <p className="text-muted-foreground mt-1">함께 성장하는 한국어 교사 커뮤니티</p>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">모임 찾기</h1>
+          <p className="text-muted-foreground mt-1 text-sm md:text-base">함께 성장하는 한국어 교사 커뮤니티</p>
         </div>
-        <Button className="gap-2">
+        <Button className="gap-2 w-full sm:w-auto">
           <Plus size={18} />
-          <span>새 모임 만들기</span>
+          <span className="hidden sm:inline">새 모임 만들기</span>
+          <span className="sm:hidden">모임 만들기</span>
         </Button>
       </div>
 
       <Card className="p-4">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
           <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)} className="flex-1">
-            <TabsList>
-              <TabsTrigger value="online">온라인 모임</TabsTrigger>
-              <TabsTrigger value="offline">오프라인 모임</TabsTrigger>
-              <TabsTrigger value="my">내 모임</TabsTrigger>
+            <TabsList className="w-full sm:w-auto">
+              <TabsTrigger value="online" className="flex-1 sm:flex-none">온라인 모임</TabsTrigger>
+              <TabsTrigger value="offline" className="flex-1 sm:flex-none">오프라인 모임</TabsTrigger>
+              <TabsTrigger value="my" className="flex-1 sm:flex-none">내 모임</TabsTrigger>
             </TabsList>
           </Tabs>
           <Button 
             variant="outline" 
             size="sm" 
-            className="gap-2"
+            className="gap-2 w-full sm:w-auto"
             onClick={() => setShowFilters(!showFilters)}
           >
             <FunnelSimple size={16} />
@@ -132,11 +133,11 @@ export function GroupsPage({ groups }: GroupsPageProps) {
       <div className="space-y-3">
         {filteredGroups.length > 0 ? (
           filteredGroups.map(group => (
-            <Card key={group.id} className="p-6 hover:shadow-md transition-shadow">
-              <div className="flex items-start justify-between">
+            <Card key={group.id} className="p-4 md:p-6 hover:shadow-md transition-shadow">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xl font-semibold">{group.name}</h3>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <h3 className="text-lg md:text-xl font-semibold">{group.name}</h3>
                     <Badge variant={group.type === 'online' ? 'default' : 'secondary'}>
                       {group.type === 'online' ? '온라인' : '오프라인'}
                     </Badge>
@@ -147,15 +148,15 @@ export function GroupsPage({ groups }: GroupsPageProps) {
                     )}
                   </div>
                   
-                  <p className="text-muted-foreground mb-3">{group.description}</p>
+                  <p className="text-sm md:text-base text-muted-foreground mb-3">{group.description}</p>
                   
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                  <div className="flex flex-wrap items-center gap-2 md:gap-4 text-xs md:text-sm text-muted-foreground mb-3">
                     <span>{group.schedule}</span>
-                    <span>•</span>
+                    <span className="hidden sm:inline">•</span>
                     <span>{group.members}명 참여</span>
                     {group.region && (
                       <>
-                        <span>•</span>
+                        <span className="hidden sm:inline">•</span>
                         <span className="flex items-center gap-1">
                           <MapPin size={14} />
                           {group.region}
@@ -173,16 +174,16 @@ export function GroupsPage({ groups }: GroupsPageProps) {
                   </div>
                 </div>
                 
-                <Button>참여 신청</Button>
+                <Button className="w-full sm:w-auto">참여 신청</Button>
               </div>
             </Card>
           ))
         ) : (
-          <Card className="p-12 text-center">
+          <Card className="p-8 md:p-12 text-center">
             <p className="text-muted-foreground mb-4">
               {activeTab === 'my' ? '참여 중인 모임이 없습니다' : '검색 결과가 없습니다'}
             </p>
-            <Button>
+            <Button className="w-full sm:w-auto">
               {activeTab === 'my' ? '모임 찾아보기' : '필터 초기화'}
             </Button>
           </Card>

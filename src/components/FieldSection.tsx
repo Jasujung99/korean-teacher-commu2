@@ -34,12 +34,12 @@ export function FieldSection({ posts }: FieldSectionProps) {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">현장 - 다문화 소통과 실천</h1>
-          <p className="text-muted-foreground mt-1">교실과 지역사회의 생생한 경험을 공유합니다</p>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">현장 - 다문화 소통과 실천</h1>
+          <p className="text-muted-foreground mt-1 text-sm md:text-base">교실과 지역사회의 생생한 경험을 공유합니다</p>
         </div>
-        <Button variant="secondary" className="gap-2">
+        <Button variant="secondary" className="gap-2 w-full sm:w-auto">
           <Plus size={18} />
           <span>새 글 작성</span>
         </Button>
@@ -53,7 +53,7 @@ export function FieldSection({ posts }: FieldSectionProps) {
           return (
             <Card
               key={category.id}
-              className={`p-6 cursor-pointer transition-all hover:shadow-md ${
+              className={`p-4 md:p-6 cursor-pointer transition-all hover:shadow-md ${
                 selectedCategory === category.id ? 'ring-2 ring-secondary' : ''
               }`}
               onClick={() => setSelectedCategory(category.id)}
@@ -66,10 +66,10 @@ export function FieldSection({ posts }: FieldSectionProps) {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold">{category.name}</h3>
+                    <h3 className="font-semibold text-sm md:text-base">{category.name}</h3>
                     <Badge variant="secondary">{count}</Badge>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-3">{category.description}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-3">{category.description}</p>
                   <div className="flex flex-wrap gap-1">
                     {category.topics.map((topic, idx) => (
                       <Badge key={idx} variant="outline" className="text-xs">
@@ -85,33 +85,33 @@ export function FieldSection({ posts }: FieldSectionProps) {
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold mb-4">
+        <h2 className="text-lg md:text-xl font-semibold mb-4">
           {categories.find(c => c.id === selectedCategory)?.name} 게시글
         </h2>
         
         {categoryPosts.length > 0 ? (
           <div className="space-y-3">
             {categoryPosts.map(post => (
-              <Card key={post.id} className="p-6 hover:shadow-md transition-shadow cursor-pointer">
-                <div className="flex items-start gap-4">
-                  <Avatar>
+              <Card key={post.id} className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <Avatar className="hidden sm:block">
                     <AvatarFallback>{post.author.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-lg mb-1 hover:text-secondary transition-colors">
+                    <h3 className="font-semibold text-base md:text-lg mb-1 hover:text-secondary transition-colors">
                       {post.title}
                     </h3>
                     <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
                       {post.content}
                     </p>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap items-center gap-2 md:gap-4 text-xs md:text-sm text-muted-foreground">
                       <span>{post.author}</span>
-                      <span>•</span>
+                      <span className="hidden sm:inline">•</span>
                       <span>조회 {post.views}</span>
-                      <span>•</span>
+                      <span className="hidden sm:inline">•</span>
                       <span>댓글 {post.comments}</span>
-                      <span>•</span>
-                      <span>{new Date(post.createdAt).toLocaleDateString('ko-KR')}</span>
+                      <span className="hidden md:inline">•</span>
+                      <span className="hidden md:inline">{new Date(post.createdAt).toLocaleDateString('ko-KR')}</span>
                     </div>
                   </div>
                 </div>
@@ -119,9 +119,9 @@ export function FieldSection({ posts }: FieldSectionProps) {
             ))}
           </div>
         ) : (
-          <Card className="p-12 text-center">
+          <Card className="p-8 md:p-12 text-center">
             <p className="text-muted-foreground mb-4">아직 게시글이 없습니다</p>
-            <Button variant="secondary">첫 번째 글을 작성해보세요</Button>
+            <Button variant="secondary" className="w-full sm:w-auto">첫 번째 글을 작성해보세요</Button>
           </Card>
         )}
       </div>

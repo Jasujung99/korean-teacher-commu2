@@ -6,24 +6,24 @@ import { Separator } from './ui/separator'
 
 export function UsageGuide() {
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8 px-4">
       <div className="text-center space-y-3">
-        <h1 className="text-4xl font-bold text-foreground">누리집 이용 안내</h1>
-        <p className="text-lg text-muted-foreground">
+        <h1 className="text-3xl md:text-4xl font-bold text-foreground">누리집 이용 안내</h1>
+        <p className="text-base md:text-lg text-muted-foreground">
           한국어 교사 동행 플랫폼을 효과적으로 활용하는 방법을 안내합니다
         </p>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>플랫폼 소개</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-lg md:text-xl">플랫폼 소개</CardTitle>
+          <CardDescription className="text-sm md:text-base">
             한국어 교사 동행은 한국어 교사들이 연구를 공유하고, 현장 경험을 나누며, 
             전문성을 함께 키워가는 커뮤니티 플랫폼입니다.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
               <BookOpen size={32} className="text-primary mb-3" />
               <h3 className="font-semibold mb-2">연구 공유</h3>
@@ -50,10 +50,10 @@ export function UsageGuide() {
       </Card>
 
       <Accordion type="multiple" className="space-y-4">
-        <AccordionItem value="navigation" className="border rounded-lg px-6">
-          <AccordionTrigger className="text-lg font-semibold">
-            <div className="flex items-center gap-3">
-              <MagnifyingGlass size={24} className="text-primary" />
+        <AccordionItem value="navigation" className="border rounded-lg px-4 md:px-6">
+          <AccordionTrigger className="text-base md:text-lg font-semibold">
+            <div className="flex items-center gap-2 md:gap-3">
+              <MagnifyingGlass size={20} className="text-primary md:w-6 md:h-6" />
               <span>누리집 둘러보기</span>
             </div>
           </AccordionTrigger>
@@ -106,10 +106,10 @@ export function UsageGuide() {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="posting" className="border rounded-lg px-6">
-          <AccordionTrigger className="text-lg font-semibold">
-            <div className="flex items-center gap-3">
-              <Plus size={24} className="text-primary" />
+        <AccordionItem value="posting" className="border rounded-lg px-4 md:px-6">
+          <AccordionTrigger className="text-base md:text-lg font-semibold">
+            <div className="flex items-center gap-2 md:gap-3">
+              <Plus size={20} className="text-primary md:w-6 md:h-6" />
               <span>게시글 작성하기</span>
             </div>
           </AccordionTrigger>
@@ -143,10 +143,10 @@ export function UsageGuide() {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="resources" className="border rounded-lg px-6">
-          <AccordionTrigger className="text-lg font-semibold">
-            <div className="flex items-center gap-3">
-              <UploadSimple size={24} className="text-resource" />
+        <AccordionItem value="resources" className="border rounded-lg px-4 md:px-6">
+          <AccordionTrigger className="text-base md:text-lg font-semibold">
+            <div className="flex items-center gap-2 md:gap-3">
+              <UploadSimple size={20} className="text-resource md:w-6 md:h-6" />
               <span>자료실 이용하기</span>
             </div>
           </AccordionTrigger>
@@ -200,10 +200,10 @@ export function UsageGuide() {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="groups" className="border rounded-lg px-6">
-          <AccordionTrigger className="text-lg font-semibold">
-            <div className="flex items-center gap-3">
-              <Users size={24} className="text-secondary" />
+        <AccordionItem value="groups" className="border rounded-lg px-4 md:px-6">
+          <AccordionTrigger className="text-base md:text-lg font-semibold">
+            <div className="flex items-center gap-2 md:gap-3">
+              <Users size={20} className="text-secondary md:w-6 md:h-6" />
               <span>모임 참여하기</span>
             </div>
           </AccordionTrigger>
@@ -259,15 +259,15 @@ export function UsageGuide() {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="interaction" className="border rounded-lg px-6">
-          <AccordionTrigger className="text-lg font-semibold">
-            <div className="flex items-center gap-3">
-              <ChatCircle size={24} className="text-primary" />
+        <AccordionItem value="interaction" className="border rounded-lg px-4 md:px-6">
+          <AccordionTrigger className="text-base md:text-lg font-semibold">
+            <div className="flex items-center gap-2 md:gap-3">
+              <ChatCircle size={20} className="text-primary md:w-6 md:h-6" />
               <span>소통하기</span>
             </div>
           </AccordionTrigger>
           <AccordionContent className="space-y-4 pt-4">
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-primary">
                   <Heart size={20} />
@@ -318,10 +318,10 @@ export function UsageGuide() {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="tips" className="border rounded-lg px-6">
-          <AccordionTrigger className="text-lg font-semibold">
-            <div className="flex items-center gap-3">
-              <span>💡</span>
+        <AccordionItem value="tips" className="border rounded-lg px-4 md:px-6">
+          <AccordionTrigger className="text-base md:text-lg font-semibold">
+            <div className="flex items-center gap-2 md:gap-3">
+              <span className="text-xl md:text-2xl">💡</span>
               <span>활용 팁</span>
             </div>
           </AccordionTrigger>
@@ -365,10 +365,10 @@ export function UsageGuide() {
 
               <Card className="border-primary/20">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base">모바일 접근</CardTitle>
+                  <CardTitle className="text-sm md:text-base">모바일 접근</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-muted-foreground">
-                  모바일에서도 모든 기능을 사용할 수 있으며, 하단 네비게이션으로 쉽게 이동할 수 있습니다
+                  모바일에서도 모든 기능을 사용할 수 있으며, 서랍창 메뉴로 쉽게 이동할 수 있습니다
                 </CardContent>
               </Card>
             </div>
@@ -378,7 +378,7 @@ export function UsageGuide() {
 
       <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
         <CardHeader>
-          <CardTitle>문의 및 지원</CardTitle>
+          <CardTitle className="text-lg md:text-xl">문의 및 지원</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <p className="text-sm text-muted-foreground">
