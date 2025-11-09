@@ -1,4 +1,4 @@
-import { BookOpen, Users, MagnifyingGlass, UserCircle, Question, List, ChartLineUp } from '@phosphor-icons/react'
+import { BookOpen, Users, MagnifyingGlass, UserCircle, Question, List, ChartLineUp, Info } from '@phosphor-icons/react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Tabs, TabsList, TabsTrigger } from './ui/tabs'
@@ -38,13 +38,25 @@ export function Header({
               </Button>
             )}
             
-            <button 
-              onClick={() => onNavigate('home')}
-              className="text-lg md:text-xl font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
-            >
-              <span className="hidden sm:inline">한국어 교사 동행</span>
-              <span className="sm:hidden">교사 동행</span>
-            </button>
+            <div className="flex items-center gap-2">
+              <button 
+                onClick={() => onNavigate('home')}
+                className="text-lg md:text-xl font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
+              >
+                <span className="hidden sm:inline">한국어 교사 동행</span>
+                <span className="sm:hidden">교사 동행</span>
+              </button>
+              
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => onNavigate('guide')}
+                title="사이트 이용 안내"
+                className="h-8 w-8 text-muted-foreground hover:text-primary"
+              >
+                <Info size={20} weight="bold" />
+              </Button>
+            </div>
             
             {currentPage === 'home' && (
               <Tabs value={activeSection} onValueChange={(v) => onSectionChange(v as Section)} className="hidden sm:block">
