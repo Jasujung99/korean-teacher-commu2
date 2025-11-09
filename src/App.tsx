@@ -10,10 +10,11 @@ import { FieldSection } from './components/FieldSection'
 import { GroupsPage } from './components/GroupsPage'
 import { ResourceLibrary } from './components/ResourceLibrary'
 import { UsageGuide } from './components/UsageGuide'
+import { SiteStructure } from './components/SiteStructure'
 import { Toaster } from './components/ui/sonner'
 import type { Section, Post, Resource, Group } from './lib/types'
 
-type Page = 'home' | 'groups' | 'resources' | 'guide'
+type Page = 'home' | 'groups' | 'resources' | 'guide' | 'structure'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home')
@@ -41,7 +42,11 @@ function App() {
     }
 
     if (currentPage === 'guide') {
-      return <UsageGuide />
+      return <UsageGuide onNavigate={(page) => handleNavigate(page)} />
+    }
+
+    if (currentPage === 'structure') {
+      return <SiteStructure />
     }
 
     return (

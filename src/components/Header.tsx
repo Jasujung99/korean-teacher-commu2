@@ -7,8 +7,8 @@ import type { Section } from '@/lib/types'
 interface HeaderProps {
   activeSection: Section
   onSectionChange: (section: Section) => void
-  onNavigate: (page: 'home' | 'groups' | 'resources' | 'guide', section?: Section) => void
-  currentPage: 'home' | 'groups' | 'resources' | 'guide'
+  onNavigate: (page: 'home' | 'groups' | 'resources' | 'guide' | 'structure', section?: Section) => void
+  currentPage: 'home' | 'groups' | 'resources' | 'guide' | 'structure'
   onLeftDrawerOpen?: () => void
   onRightDrawerOpen?: () => void
 }

@@ -1,10 +1,15 @@
-import { BookOpen, Users, FolderOpen, Plus, MagnifyingGlass, UploadSimple, Link, Bell, ChatCircle, Heart, Download } from '@phosphor-icons/react'
+import { BookOpen, Users, FolderOpen, Plus, MagnifyingGlass, UploadSimple, Link, Bell, ChatCircle, Heart, Download, FileText } from '@phosphor-icons/react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion'
 import { Badge } from './ui/badge'
 import { Separator } from './ui/separator'
+import { Button } from './ui/button'
 
-export function UsageGuide() {
+interface UsageGuideProps {
+  onNavigate?: (page: 'structure') => void
+}
+
+export function UsageGuide({ onNavigate }: UsageGuideProps) {
   return (
     <div className="max-w-4xl mx-auto space-y-8 px-4">
       <div className="text-center space-y-3">
@@ -23,6 +28,23 @@ export function UsageGuide() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+          {onNavigate && (
+            <div className="mb-4">
+              <Button 
+                variant="outline" 
+                className="w-full justify-start gap-3 h-auto py-4"
+                onClick={() => onNavigate('structure')}
+              >
+                <FileText size={24} className="text-primary flex-shrink-0" />
+                <div className="text-left flex-1">
+                  <div className="font-semibold">사이트 구조 문서 보기</div>
+                  <div className="text-xs text-muted-foreground mt-1">
+                    누리집의 전체 구조와 설계 철학을 노션 스타일 문서로 확인하세요
+                  </div>
+                </div>
+              </Button>
+            </div>
+          )}
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
               <BookOpen size={32} className="text-primary mb-3" />
