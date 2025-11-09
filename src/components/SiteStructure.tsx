@@ -40,6 +40,16 @@ export function SiteStructure() {
         <p className="text-lg text-muted-foreground pt-1">
           최종 누리집 구조
         </p>
+        <div className="flex items-center gap-4 pt-3 text-sm text-muted-foreground border-t border-border mt-4">
+          <div className="flex items-center gap-2">
+            <span className="font-medium">버전:</span>
+            <span className="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs font-medium">v1.0</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="font-medium">작성일:</span>
+            <span>2025년 1월 17일</span>
+          </div>
+        </div>
       </div>
 
       <div className="border-l-2 border-border pl-6 space-y-1">

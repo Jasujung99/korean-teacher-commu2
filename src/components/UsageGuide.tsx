@@ -1,4 +1,4 @@
-import { BookOpen, Users, FolderOpen, Plus, MagnifyingGlass, UploadSimple, Link, Bell, ChatCircle, Heart, Download, FileText } from '@phosphor-icons/react'
+import { BookOpen, Users, FolderOpen, Plus, MagnifyingGlass, UploadSimple, Link, Bell, ChatCircle, Heart, Download } from '@phosphor-icons/react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion'
 import { Badge } from './ui/badge'
@@ -17,6 +17,18 @@ export function UsageGuide({ onNavigate }: UsageGuideProps) {
         <p className="text-base md:text-lg text-muted-foreground">
           한국어 교사 동행 플랫폼을 효과적으로 활용하는 방법을 안내합니다
         </p>
+        {onNavigate && (
+          <p className="text-sm text-muted-foreground pt-2">
+            누리집의 전체 구조와 설계 철학은{' '}
+            <button 
+              onClick={() => onNavigate('structure')} 
+              className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors font-medium"
+            >
+              사이트 구조 문서
+            </button>
+            에서 확인하세요
+          </p>
+        )}
       </div>
 
       <Card>
@@ -28,23 +40,6 @@ export function UsageGuide({ onNavigate }: UsageGuideProps) {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {onNavigate && (
-            <div className="mb-4">
-              <Button 
-                variant="outline" 
-                className="w-full justify-start gap-3 h-auto py-4"
-                onClick={() => onNavigate('structure')}
-              >
-                <FileText size={24} className="text-primary flex-shrink-0" />
-                <div className="text-left flex-1">
-                  <div className="font-semibold">사이트 구조 문서 보기</div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    누리집의 전체 구조와 설계 철학을 노션 스타일 문서로 확인하세요
-                  </div>
-                </div>
-              </Button>
-            </div>
-          )}
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             <div className="flex flex-col items-center text-center p-4 bg-muted/50 rounded-lg">
               <BookOpen size={32} className="text-primary mb-3" />
