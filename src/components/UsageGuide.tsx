@@ -1,4 +1,4 @@
-import { BookOpen, Users, FolderOpen, Plus, MagnifyingGlass, UploadSimple, Link, Bell, ChatCircle, Heart, Download } from '@phosphor-icons/react'
+import { BookOpen, Users, FolderOpen, Plus, MagnifyingGlass, UploadSimple, Link, Bell, ChatCircle, Heart, Download, ShieldCheck } from '@phosphor-icons/react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion'
 import { Badge } from './ui/badge'
@@ -119,6 +119,114 @@ export function UsageGuide({ onNavigate }: UsageGuideProps) {
                   다문화 가정 지원과 지역사회 활동
                 </li>
               </ul>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="terms" className="border rounded-lg px-4 md:px-6">
+          <AccordionTrigger className="text-base md:text-lg font-semibold">
+            <div className="flex items-center gap-2 md:gap-3">
+              <ShieldCheck size={20} className="text-primary md:w-6 md:h-6" />
+              <span>회원 약관</span>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent className="space-y-4 pt-4">
+            <div className="space-y-3">
+              <h4 className="font-semibold">서비스 이용 약관</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                한국어 교사 동행 플랫폼을 이용하시는 모든 회원은 다음 약관에 동의하는 것으로 간주됩니다.
+              </p>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">회원 가입 및 자격</h4>
+              <ul className="space-y-2 ml-6 text-sm">
+                <li>• 만 18세 이상의 한국어 교육 관계자 및 관심자</li>
+                <li>• 실명 기반 가입을 원칙으로 합니다</li>
+                <li>• 허위 정보 제공 시 서비스 이용이 제한될 수 있습니다</li>
+                <li>• 1인당 1개의 계정만 생성 가능합니다</li>
+              </ul>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="font-semibold flex items-center gap-2">
+                <ShieldCheck size={18} className="text-primary" />
+                콘텐츠 및 저작권
+              </h4>
+              <ul className="space-y-2 ml-6 text-sm">
+                <li>• 회원이 작성한 모든 콘텐츠의 저작권은 작성자에게 있습니다</li>
+                <li>• 타인의 저작물을 무단 도용하거나 표절해서는 안 됩니다</li>
+                <li>• 자료실 업로드 시 반드시 저작권 확인이 필요합니다</li>
+                <li>• 다운로드한 자료는 교육 목적으로만 사용해야 합니다</li>
+                <li>• 영리 목적 사용 시 별도 허가가 필요합니다</li>
+              </ul>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">커뮤니티 이용 규칙</h4>
+              <div className="bg-destructive/10 p-4 rounded-lg">
+                <p className="text-sm font-medium mb-2">❌ 금지 행위</p>
+                <ul className="text-sm space-y-1 ml-4">
+                  <li>• 욕설, 비방, 혐오 표현 사용</li>
+                  <li>• 타인의 개인정보 무단 공개</li>
+                  <li>• 상업적 광고 및 홍보</li>
+                  <li>• 정치적·종교적 선전 활동</li>
+                  <li>• 허위 사실 유포</li>
+                  <li>• 불법 자료 공유</li>
+                </ul>
+              </div>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">개인정보 보호</h4>
+              <ul className="space-y-2 ml-6 text-sm">
+                <li>• 수집된 개인정보는 서비스 제공 목적으로만 사용됩니다</li>
+                <li>• 회원의 동의 없이 제3자에게 제공되지 않습니다</li>
+                <li>• 언제든지 개인정보 열람, 수정, 삭제를 요청할 수 있습니다</li>
+                <li>• 탈퇴 시 모든 개인정보는 즉시 삭제됩니다</li>
+              </ul>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">서비스 변경 및 중단</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                운영진은 서비스 개선을 위해 기능을 변경하거나 추가할 수 있으며, 
+                불가피한 경우 사전 공지 후 서비스를 일시 중단할 수 있습니다.
+              </p>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">면책 조항</h4>
+              <ul className="space-y-2 ml-6 text-sm text-muted-foreground">
+                <li>• 회원 간 분쟁은 당사자 간 해결을 원칙으로 합니다</li>
+                <li>• 회원이 게시한 정보의 정확성은 작성자에게 책임이 있습니다</li>
+                <li>• 외부 링크로 인한 피해는 플랫폼이 책임지지 않습니다</li>
+              </ul>
+            </div>
+
+            <div className="bg-primary/10 p-4 rounded-lg mt-4">
+              <p className="text-sm font-medium mb-2">📌 약관 동의</p>
+              <p className="text-sm text-muted-foreground">
+                회원 가입 시 본 약관에 동의한 것으로 간주되며, 
+                약관 위반 시 경고 후 이용 제한 또는 계정 정지 조치가 취해질 수 있습니다.
+              </p>
+            </div>
+
+            <div className="text-xs text-muted-foreground mt-4 pt-4 border-t">
+              <p>최종 수정일: 2025년 1월 1일</p>
+              <p className="mt-1">문의: 운영진 메시지 또는 공지사항 참고</p>
             </div>
           </AccordionContent>
         </AccordionItem>
