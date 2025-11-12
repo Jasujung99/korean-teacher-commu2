@@ -113,9 +113,12 @@ npm run deploy
 - `NOTION_DATABASE_ID` - Notion database ID
 - `GITHUB_CLIENT_ID` - GitHub OAuth client ID
 
-## API Documentation
+## Documentation
 
-API documentation will be available after implementation is complete.
+- **[API Documentation](./API.md)** - Complete API reference with endpoints, request/response examples, and error codes
+- **[Deployment Guide](./DEPLOYMENT.md)** - Production deployment instructions, secrets setup, and resource configuration
+- **[Monitoring Guide](./MONITORING.md)** - Monitoring, alerting, and performance tracking setup
+- **[Test Guide](./TEST_GUIDE.md)** - Testing instructions and examples
 
 ## License
 

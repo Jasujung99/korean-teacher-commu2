@@ -1,9 +1,9 @@
 # Development environment variables
 # Copy this file to .dev.vars and fill in your actual values
 
-JWT_SECRET=dev-secret-key-change-this
-NOTION_API_KEY=secret_xxx
-NOTION_DATABASE_ID=xxx
-GITHUB_CLIENT_ID=xxx
-GITHUB_CLIENT_SECRET=xxx
+JWT_SECRET=your-jwt-secret-here
+NOTION_API_KEY=your-notion-api-key-here
+NOTION_DATABASE_ID=your-notion-database-id-here
+GITHUB_CLIENT_ID=your-github-client-id-here
+GITHUB_CLIENT_SECRET=your-github-client-secret-here
 ENVIRONMENT=development
